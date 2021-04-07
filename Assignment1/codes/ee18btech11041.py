@@ -3,6 +3,12 @@ from scipy import signal
 import matplotlib.pyplot as plt
 import numpy as np
 
+#if using termux
+#import subprocess
+#import shlex
+#end if
+
+
 input_signal,fs = sf.read('Sound_Noise.wav')
 sample_freq = fs
 order = 4
@@ -44,8 +50,8 @@ for ax in axs.flat:
     ax.label_outer()
 
 
-plt.savefig('ee18btech11041_1.eps')
-
+plt.savefig('../figs/ee18btech11041_1.eps')
+#subprocess.run(shlex.split("termux-open ../figs/ee18btech11041_1.eps"))  #if using termex
 
 freq = np.arange(-np.pi,np.pi,2*np.pi/len(input_signal))
 
@@ -68,6 +74,6 @@ for ax in axs.flat:
 for ax in axs.flat:
     ax.label_outer()
 
-plt.savefig('ee18btech11041_2.eps')
-
+plt.savefig('../figs/ee18btech11041_2.eps')
+#subprocess.run(shlex.split("termux-open ../figs/ee18btech11041_2.eps"))  #if using termex
 # plt.show()    
